@@ -1,0 +1,32 @@
+# Copy this file to ~/.bochsrc
+
+#config_interface: wx
+#display_library: wx
+
+# /usr/share/bochs is where bochs files are likely located on your own machine.
+romimage: file=/usr/share/bochs/BIOS-bochs-legacy
+vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
+floppya: 1_44=image, status=inserted
+
+boot: floppy
+
+cpu: count=1, ips=1000000, reset_on_triple_fault=1
+megs: 32
+
+#floppy_bootsig_check: disabled=1
+log: /dev/stdout
+panic: action=ask
+error: action=report
+info: action=report
+debug: action=ignore
+debugger_log: -
+com1: enabled=0
+parport1: enabled=0
+vga_update_interval: 300000
+keyboard_serial_delay: 250
+keyboard_paste_delay: 100000
+#floppy_command_delay: 500
+mouse: enabled=0
+private_colormap: enabled=0
+
+#gdbstub: enabled=1, port=1234, text_base=0, data_base=0, bss_base=0

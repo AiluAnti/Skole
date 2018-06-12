@@ -1,0 +1,6 @@
+\\smb\aei034\Desktop\ServerAndClient\ServerAndClient\bin\Debug\ServerAndClient.exe.config
+\\smb\aei034\Desktop\ServerAndClient\ServerAndClient\bin\Debug\ServerAndClient.exe
+\\smb\aei034\Desktop\ServerAndClient\ServerAndClient\bin\Debug\ServerAndClient.pdb
+\\smb\aei034\Desktop\ServerAndClient\ServerAndClient\obj\Debug\ServerAndClient.csprojResolveAssemblyReference.cache
+\\smb\aei034\Desktop\ServerAndClient\ServerAndClient\obj\Debug\ServerAndClient.exe
+\\smb\aei034\Desktop\ServerAndClient\ServerAndClient\obj\Debug\ServerAndClient.pdb

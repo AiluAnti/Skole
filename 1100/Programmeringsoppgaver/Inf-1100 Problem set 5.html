@@ -1,0 +1,126 @@
+
+<!-- saved from url=(0100)https://fronter.com/uit/links/files.phtml/1664119997$826399240$/Arkiv/Programmeringsoppgaver/p5.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Inf-1100 Problem set 5</title>
+  <style type="text/css"></style></head>
+
+  <body>
+    <h1>Problem set 5</h1>
+
+    <h2>Overview</h2>
+    
+    <p>In this assignment you will implement C code for rotation and animation.</p>
+
+    <h2>Description</h2>
+
+    <p>Your task is first to extend the code from the previous
+    assignment with support for rotating triangles around the Z axis.
+    Then, you should proceed by creating a moving object on the screen
+    (i.e. animation). </p>
+
+    <h3>Rotation</h3>
+
+    <p>Rotation around the Z axis can be performed by applying the
+    following formulas to each of the the x and y coordinates of a
+    triangle:</p>
+
+    <center>x' = cos(r)*x - sin(r)*y</center>
+    <center>y' = sin(r)*x + cos(r)*y</center>
+
+    <p>where r is the degree of rotation.  Note that the C library cos
+    and sin functions operate in radians, not degrees.  To convert
+    from degree to radians use the following formula: </p>
+
+
+    <center>radians = degree*&#960;/180</center>
+
+    <p>The C math library defines &#960; as M_PI.</p>
+
+    <p>Add support for rotation of triangles by writing a new function
+    in the triangle.c file:</p>
+
+    <center><b>void RotateTriangle(triangle_t *triangle)</b></center>
+
+    <p><b>RotateTriangle</b> should apply the formulas above to rotate
+    the on-screen coordinates of the triangle according to a
+    <em>rotation</em> variable in the triangle data structure (extend
+    the triangle data structure with a float variable called
+    <em>rotation</em>).  The <em>rotation</em> variable should tell
+    the degree of rotation for the triangle.  In <b>DrawTriangle</b>,
+    insert a call to <b>RotateTriangle</b> just after the
+    <b>ScaleTriangle</b> call.
+
+    </p><h3>Animation</h3>
+    
+    <p>The illusion of movement is created by displaying a series of
+    images (frames) on the screen where rotation, scale, or
+    translation has been shifted slightly in each image.</p>
+
+    <p>One of the problems that you have to solve is how to ensure
+    that the rate of animation (i.e. the time it takes for the
+    transition from point A to point B on the screen) is independent
+    of the speed of the underlying CPU.  For example, assume your
+    program just consists of a loop that continuously updates animation
+    variables (rotation, scale, etc.), renders, and visualizes
+    animation frames.  With this approach, the time it takes to, say
+    rotate an object 90 degrees, is totally dependent upon the speed
+    of the underlying CPU.  A fast CPU might perform the 90 degree
+    rotation in 0.1s, while a slow CPU might require 0.5s.  We suggest
+    solving this problem using one of the following approaches:
+    </p><ul>
+      <li> Decide on a fixed number of animation updates per second,
+      say 50 (i.e. one new update per 1000/50=20 milliseconds).  Then
+      measure the time it takes to calculate and display one animation
+      frame(using <a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlgetticks.html">SDL_GetTicks</a>),
+      and delay the creation of the next frame until 20ms of time has
+      passed (using <a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdldelay.html">SDL_Delay</a>).
+      A drawback with this approach is that the animation will slow
+      down if there is not enough processing power to create animation
+      frames at the target rate.</li>
+
+      <li> An alternative approach is to introduce partial animation
+      updates.  Assume you decide on 50 animation updates per second
+      and, similar to the the above approach, you measure the time it
+      takes to create one animation frame.  Based on this time you
+      calculate how many animation updates to perform.  For example,
+      if it took 10ms to create the frame, the animation variables
+      should receive 10/20=0.5 updates.  Similarly, if it took 30ms to
+      render the frame, the animation variables should receive
+      30/20=1.5 updates.  Using this approach the animation will
+      progress at a fixed rate. A drawback, however, is that the
+      animation will seem 'jerky' if there is insufficient CPU
+      available.</li>
+
+    </ul>
+
+    In the previous assignment, the <b>DrawTriangle</b> function had an
+    SDL call in the end to update the screen (<b>SDL_UpdateRect</b>).
+    For this assignment, updating of the screen will have to be
+    performed as part of the animation loop (remember to update the
+    entire screen, not just the bounding box of a single triangle).
+
+
+    <h2>Code</h2>
+
+    When all students have handed in their answers to the previous
+    assignment we will distribute a set of files that you can use as a
+    starting point for this assignment.  This set of files, however,
+    will not contain any more functionality than the code you
+    developed for the previous assignment.  We suggest basing your
+    work on this assignment on the code you developed for the previous
+    assignment.
+
+
+    
+
+    <h2>Deadline</h2>
+
+    <p>This assignment is not mandatory. However, we highly recommend
+    you to complete it.</p>
+
+
+    <hr>
+    <address><a href="mailto:aage@cs.uit.no"></a></address>
+  
+
+</body></html>

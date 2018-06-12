@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Inf-1101 Assignment 2</title>
+  </head>
+
+  <body>
+    <h1>Assignment 2</h1>
+
+    <h2>Overview</h2>
+    
+    <p>In this assignment you will implement a map ADT whose interface
+    we have specified for you.  A map associates values with keys.
+    The operations to be supported by maps are:</p>
+    
+    <ul>
+      <li>Creating a new, empty map.  (map_create)</li>
+      <li>Destroying a may.  (map_destroy)</li>
+      <li>Mapping a key to an associated value.  (map_put)</li>
+      <li>Checking whether some key exists.  (map_haskey)</li>
+      <li>Retrieving the value associated with some key.  (map_get)</li>
+    </ul>
+
+    <p>There should be no bound on the number of elements that may be
+    inserted into the map, short of running out of memory.</p>
+
+    <h2>Algorithms</h2>
+    
+    <p>The implementation of the map ADT is intended to be based on
+    hashing, as evidenced by the specified map_create() function,
+    which accepts both a comparison function and a hash function.
+    These functions specify how keys in the map are to be compared and
+    hashed, respectively.  The main implementation questions are how
+    to deal with collisions (i.e. when two inequal keys have equal hash
+    values) and how to grow the capacity of the map as needed.</p>
+
+    <h2>Applications</h2>
+
+    <p>To test your implementation, you will implement a simple
+    utility program called <i>wordfreqs</i>.  The program should
+    tokenize a set of input files into a sequence of words, and
+    proceed to print all unique words, along with the number of times
+    they occur.  The most common word should be listed first, followed
+    by the second most common word, and so on.  The input files to
+    process should be specifed on the command-line, like this:</p>
+
+    <p>./wordfreqs sometextfile someothertextfile ...<p>
+
+    <p>One way to implement this would be to use a map that maps each
+    word to its frequency of occurrence, while keeping a separate list
+    of unique words.  When all words have been read, the list of
+    unique words may be sorted in order of descending word
+    frequencies.</p>
+
+    <h2>Code</h2>
+
+    <p>Your starting point is the following set of files:</p>
+
+    <ul>
+      <li>list.h - Specifies the interface of
+      the list ADT from the first assignment.</li>
+
+      <li>linkedlist.c - An
+      implementation of the list ADT based on doubly-linked
+      lists.</li>
+
+      <li>map.h- Specifies the interface of
+      the map ADT.  Do not modify this file.</li>
+
+      <li>common.h - Defines utility
+      functions for your convenience.  There are two additions since
+      the previous assignment; a typedef for hash functions, and a
+      function hash_string() which may be used to hash null-terminated
+      strings.</li>
+
+      <li>common.c - Implements the
+      functions defined in common.h.</li>
+
+      <li>wordfreqs.c - An empty stub for
+      the wordfreqs program (complete this).</li>
+
+      <li>Makefile - A Makefile for
+      compiling the code.</li>
+    </ul>
+
+    <p>As in the first assignment (list ADT), you need to add
+    a new source file that implements your map ADT. Edit the name of this
+    source file into the Makefile, as the value of the MAP_SRC variable.</p>
+
+    <p>We've bundled all of the source code in a zip
+    file. The zip file is located in the same
+    folder as this document (p2-pre.zip).</p>
+
+    <h2>Deadline</h2>
+ 
+
+    <p>This assignment is not mandatory.  However, we highly recommend
+    you to complete it. </p>
+
+    <hr>
+    <address><a href="mailto:aage@cs.uit.no"></a></address>
+  </body>
+</html>

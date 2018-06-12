@@ -1,0 +1,114 @@
+
+<!-- saved from url=(0100)https://fronter.com/uit/links/files.phtml/1664119997$826399240$/Arkiv/Programmeringsoppgaver/p3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Inf-1100 Problem set 3</title>
+  <style type="text/css"></style></head>
+
+  <body>
+    <h1>Inf-1100 Problem set 3</h1>
+
+    <h2>Overview</h2>
+    
+    <p>In this assignment you will try to formulate an algorithm to
+    draw a line on a computer screen.  We encourage you to discuss the
+    assignment with other students.  Note that this assignment is
+    <b>not</b> mandatory.  You are not supposed to hand in anything.
+    </p>
+
+
+    <h2>Description</h2>
+
+    <p>An image shown on a computer screen is a collection of colored
+    dots/squares (pixels).  The computer screen itself is organized as
+    a two-dimensional coordinate system with a number of pixels in the
+    horizontal (x) and vertical (y) direction.  The more pixels a
+    screen can handle, the more detailed can be displayed in an image.
+    For example, a high definition screen (HD) has 1920 pixels in
+    the x direction and 1080 pixels in the y direction. In contrast, a
+    screen only capable of showing DVD quality images will have
+    720 pixels in the x direction, and 576 in the y direction.</p>
+
+    <p>This assignment is divided into four steps:</p>
+
+    <p><b>1.</b> <i> Given the start and end coordinates of a <b>horizontal</b> line,
+    formulate an algorithm to compute the coordinates of the pixels along the line.
+    Example coordinates: (10,10), (100,10) or (200,100),(100,100).
+    </i></p>
+
+    <p><b>2.</b> <i> Given the start and end coordinates of a <b>vertical</b> line,
+    formulate an algorithm to compute the coordinates of the pixels along the line.
+    Example coordinates: (100,10), (100,200) or (200,50),(200,250).
+    </i></p>
+
+    <p><b>3.</b> <i> Given the start and end coordinates of a line with a <b>45 degree slope</b>,
+    formulate an algorithm to compute the coordinates of the pixels along the line.
+    Example coordinates: (0,0), (100,100) or (100,100),(200,0).
+    </i></p>
+       
+    <p><b>4.</b><i> Given the start and end coordinates of a line, 
+    formulate an algorithm to compute the coordinates of the pixels along
+    the line.</i></p>
+
+
+    <p>We encourage you to try to implement the algorithm in C code.
+    To this end we provide you with code to open a window on the
+    computer screen and code to set a pixel in the window.  In the
+    provided code the window is set up with 1024 pixels horizontally
+    (the x-axis) and 768 pixels vertically (the y-axis).  The point
+    0,0 is in the upper left corner of the window.  0, 767 is in the
+    lower left corner, 1023,0 is in the upper right corner, and
+    1023,767 is in the lower right corner.  Each pixel is represented
+    as a 32 bit value encoding the color of the pixel (in RBG format,
+    see <a href="http://en.wikipedia.org/wiki/RGB">RGB</a>).</p>
+
+    <p>To open a window on the screen we use a library called Simple
+    Directmedia Layer (SDL).  More information on SDL can be found <a href="http://www.libsdl.org/">here</a>.  Do not worry too much
+    about SDL for this assignment.  All the SDL "magic" is
+    handled by the code provided by us.</p>
+
+    
+
+    <h2>Code</h2>
+
+    <p>If you decide to implement your algorithm, your starting point is the following set of files:</p>
+
+    <ul>
+      <li>drawline.h - Specifies the interface of the drawline function.  Do not modify this file.</li>
+      <li>drawline.c - An empty stub for the drawline program (complete this).</li>
+      <li>Makefile - A Makefile for compiling the code.</li>
+    </ul>
+
+    <p>We've bundled all of these files in a zip file.  The zip file is located in the same
+    folder as this document.  Use this zip file as a starting point,
+    as it also includes the necessary SDL files.</p>
+
+    <h2>Tools</h2>
+
+    <h4>General</h4>
+
+    <p>All programming tools are installed on the lab machines.  To get 
+    started with this assignment, download the zip file with the problem set code 
+    and unzip it.  You shold then be able to compile the code for this assignment
+    simply by typing 'make' from the shell. Type the command <b>app.exe</b>
+    from the shell to run the program. </p>
+
+
+    <h4>Linux/Mac OS X</h4>
+    <p>If you are programming on Linux/Mac, 
+    edit Makefile to build drawline with the Linux/Mac
+    version of the SDL library.  See the comment in the Makefile.  
+    If you are running Linux/Mac on your own machine, SDL must be installed on the machine.</p>
+
+    <h2>Resources</h2>
+
+    <p>If you wish to learn more about Makefile and make, a starting point is this <a href="http://www.opussoftware.com/tutorial/TutMakefile.htm">tutorial</a>.</p>
+
+    <p><a href="http://www.cs.helsinki.fi/group/goa/mallinnus/lines/bresenh.html">Bresenham</a>
+    is one example of a fast algorithm for drawing lines (<a href="http://en.wikipedia.org/wiki/Bresenham's_line_algorithm">Wikipedia/Bresenham</a>).</p>
+
+
+    <hr>
+    <address><a href="mailto:aage@cs.uit.no"></a></address>
+  
+
+</body></html>

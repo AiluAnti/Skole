@@ -1,0 +1,49 @@
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	<title>INF-2301 Web Server</title>
+	
+</head>
+<body>
+    <div class="jumbotron" style="background-color:silver;">
+		<div class="container">
+			<h1>INF-2301 Web Server</h1>
+			<p>
+				Use this page to test your implementation of the HTTP requests.
+			</p>
+			<p>
+				If you see this page, it probably means that your GET implementation works correctly.
+			</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<h2>POST input test</h2>
+		<p>Use the field below to test your implementation of the POST method:</p>
+		
+	    <input id="inputtxt" type="text" name="test" />
+		<button onclick="callback()">Submit</button>
+	</div>
+
+<script type="text/javascript">
+
+function callback() {
+
+	var strinput = document.getElementById("inputtxt").value;
+	xmlhttp = new XMLHttpRequest();
+	
+	xmlhttp.open("POST", "/test.txt", false);
+	xmlhttp.send(strinput);
+
+	window.location = "/testpage.html"
+};
+</script>
+	
+	
+</body>
+</html>

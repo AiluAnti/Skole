@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Inf-1101 Assignment 1</title>
+  </head>
+
+  <body>
+    <h1>Assignment 1</h1>
+
+    <h2>Overview</h2>
+    
+    <p>In this assignment you will implement an abstract data type
+    (ADT).  Specifically, you will implement a list ADT whose
+    interface we have specified for you.  The operations to be supported by
+    the list are:</p>
+    
+    <ul>
+      <li>Adding elements to the beginning or end of the list.</li>
+      <li>Removing elements from the beginning or end of the list.</li>
+      <li>Getting the current size of the list.</li>
+      <li>Checking whether a specific element is contained in the list.</li>
+      <li>Sorting the list according to some specified ordering.</li>
+      <li>Iterating over the elements in the list.</li>
+    </ul>
+
+    <p>There should be no bound on the number of elements that may be
+    inserted into the list, short of running out of memory.</p>
+
+    <h2>Algorithms</h2>
+    
+    <p>The purpose of this assignment is mainly to become acquainted with
+    our chosen pattern for implementing ADTs.  The algoritms employed
+    are a secondary concern; you are free to choose any implementation
+    you like, as long as you correctly implement the specified
+    interface.</p>
+
+    <p>Two reasonable approaches are storing the elements in a
+    doubly-linked list, or using an array which is dynamically resized
+    as the list grows.  If time allows, feel free to implement both of
+    these.  As for sorting the list, we suggest you start out by
+    implementing one of the so-called elementary sorting algorithms
+    that have a complexity of O(n*n).  You can always return to the
+    code at a later time to implement a more efficient sorting
+    algorithm.</p>
+
+    <h2>Applications</h2>
+
+    <p>You will implement two applications that utilize your list ADT.
+    The first, called <i>sortwords</i>, should tokenize a set of input
+    files into a sequence of words, and proceed to print all words in
+    sorted order.  The second, called <i>reversewords</i>, should work
+    similarly, but should print all words in the reverse order that
+    they appear in the input.  In both cases, the set of input files
+    to process should be listed on the command-line, like this:</p>
+
+    <p>./sortwords sometextfile someothertextfile ...<p>
+
+    <h2>Code</h2>
+
+    <p>Your starting point is the following set of files:</p>
+
+    <ul>
+      <li>list.h - Specifies the interface of the list
+ADT.  Do not modify this file.</li>
+      <li>common.h - Defines two utility functions for your
+convenience: fatal_error() and tokenize_file().</li>
+      <li>common.c - Implements the functions defined in common.h.</li>
+      <li>sortwords.c- An empty stub for the sortwords program (complete
+this).</li>
+      <li>reversewords.c- An empty stub for the reversewords program
+(complete this).</li>
+      <li>Makefile - A Makefile for compiling the code.</li>
+    </ul>
+
+    <p>Besides completing the sortwords and reversewords programs, you
+    need to add a new source (.c) file that implements your list ADT.
+    Once you've created that file (let's say you called it
+    linkedlist.c), you need to make a minor change to the Makefile:
+    Change the first line of the Makefile from LIST_SRC= to
+    LIST_SRC=linkedlist.c.  In general, if you create multiple
+    implementations of the ADT you can change which one is being used
+    by changing the value of the LIST_SRC variable in the Makefile.</p>
+
+    <p>We've bundled all of these files in a zip file. The zip file is located in the same
+    folder as this document (p1-pre.zip).</p>
+    
+    <h2>Tools</h2>
+
+    <p>All programming tools are installed on the lab machines.</p>
+
+    <p>On Unix systems (e.g. Linux), you shold be able to compile and run
+    the code for this assignment without installing anything, simply
+    by typing 'make' from the shell.</p>
+
+
+    <h2>Deadline</h2>
+
+    <p>This assignment is not mandatory.  However, we highly recommend
+    you to complete it. </p>
+
+    <hr>
+    <address><a href="mailto:steffenv@cs.uit.no"></a></address>
+  </body>
+</html>

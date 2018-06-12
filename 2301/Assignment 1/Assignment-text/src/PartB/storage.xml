@@ -1,0 +1,5 @@
+<?xml version ="1.0"?>
+<messages>
+	<message id="0" value="this is a test message."/>
+	<message id="1" value="This is another one."/>
+</messages>

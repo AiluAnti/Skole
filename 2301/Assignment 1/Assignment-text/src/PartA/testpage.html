@@ -1,0 +1,46 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	<title>INF-2301 Web Server</title>
+	
+</head>
+<body>
+
+<div class="jumbotron">
+	<div class="container">
+		<h1>INF-2301 Web Server</h1>
+		<p>
+			If you see your posted request in the list, your POST implementation probably works.
+		</p>
+	</div>
+</div>
+
+<div class="container">
+	
+	<p id="test-datafield">
+		
+	</p>
+	
+</div>
+
+
+<script>
+	
+	xmlhttp = new XMLHttpRequest();
+
+	xmlhttp.open("GET", "test.txt", false);
+	xmlhttp.send()
+
+	document.getElementById("test-datafield").innerHTML = xmlhttp.responseText;
+
+</script>
+
+
+</body>
+</html>

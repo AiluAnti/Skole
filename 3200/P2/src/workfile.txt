@@ -1,0 +1,50 @@
+Number of nodes:1
+Number of PUT and GET requests:889
+Number of nodes:1
+Number of PUT and GET requests:892
+Number of nodes:1
+Number of PUT and GET requests:894
+Number of nodes:1
+Number of PUT and GET requests:888
+Number of nodes:1
+Number of PUT and GET requests:886
+Number of nodes:2
+Number of PUT and GET requests:794
+Number of nodes:2
+Number of PUT and GET requests:793
+Number of nodes:2
+Number of PUT and GET requests:796
+Number of nodes:2
+Number of PUT and GET requests:791
+Number of nodes:2
+Number of PUT and GET requests:796
+Number of nodes:4
+Number of PUT and GET requests:256
+Number of nodes:4
+Number of PUT and GET requests:258
+Number of nodes:4
+Number of PUT and GET requests:252
+Number of nodes:4
+Number of PUT and GET requests:259
+Number of nodes:4
+Number of PUT and GET requests:255
+Number of nodes:8
+Number of PUT and GET requests:151
+Number of nodes:8
+Number of PUT and GET requests:130
+Number of nodes:8
+Number of PUT and GET requests:140
+Number of nodes:8
+Number of PUT and GET requests:146
+Number of nodes:8
+Number of PUT and GET requests:139
+Number of nodes:16
+Number of PUT and GET requests:68
+Number of nodes:16
+Number of PUT and GET requests:70
+Number of nodes:16
+Number of PUT and GET requests:70
+Number of nodes:16
+Number of PUT and GET requests:78
+Number of nodes:16
+Number of PUT and GET requests:68

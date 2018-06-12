@@ -1,0 +1,95 @@
+<html>
+<head>
+    <script type="text/javascript" src="vis.min.js"></script>
+    <link href="vis.min.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        #mynetwork {
+            width: 100%;
+            height: 100%;
+            border: 1px solid lightgray;
+        }
+    </style>
+</head>
+<body>
+<div id="mynetwork"></div>
+
+<script type="text/javascript">
+    // create an array with nodes
+    var nodes = new vis.DataSet([]);
+
+    // create an array with edges
+    var edges = new vis.DataSet([]);
+
+    // create a network
+    var container = document.getElementById('mynetwork');
+
+    // provide the data in the vis format
+    var data = {
+        nodes: nodes,
+        edges: edges
+    };
+    var options = {
+        edges: {arrows: "to"},
+    };
+
+    // initialize your network!
+    var network = new vis.Network(container, data, options);
+
+    var conn
+
+    // Set up a websocket for updates
+    if (window["WebSocket"]) {
+        conn = new WebSocket("ws://" + document.location.host + "/graphsocket");
+        conn.onclose = function(evt) {
+            console.log("connection closed");
+        }
+        conn.onmessage = function(evt) {
+
+            console.log(evt.data);
+            cmd = JSON.parse(evt.data);
+
+            if (cmd.Command == "remove") {
+                nodes.remove({id: cmd.NodeName});
+                edges.forEach(function(item) {
+                    if (item.to == cmd.NodeName) {
+                        edges.remove(item);
+                    }
+                });
+            }
+
+            if (cmd.Command == "update") {
+                nodes.update({ id: cmd.NodeName, label: cmd.NodeName});
+                edges.forEach(function(item) {
+                    var shouldRemove = (item.from == cmd.NodeName) &&
+                        (cmd.ConnectedNodes.indexOf(item.to)===-1);
+                    if (shouldRemove) {
+                        console.log("removing", item)
+                        edges.remove(item);
+                    }
+                });
+                for (var i=0; i<cmd.ConnectedNodes.length; i++) {
+                    edges.update({
+                        id: cmd.NodeName + "_" + cmd.ConnectedNodes[i],
+                        from: cmd.NodeName,
+                        to: cmd.ConnectedNodes[i],
+                    });
+                }
+            }
+        }
+    }
+
+    network.on("click", function (params) {
+        var clickedNode = this.getNodeAt(params.pointer.DOM);
+        console.log('click event', params, clickedNode);
+        if (clickedNode && conn) {
+            var msg = {
+                Command: "addNode",
+                NodeName: clickedNode,
+            };
+            conn.send(JSON.stringify(msg));
+        }
+    });
+</script>
+</body>
+</html>
